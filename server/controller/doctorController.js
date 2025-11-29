@@ -32,7 +32,7 @@ const viewDoctor = async(req,res)=>{
         const viewDoctor = await doctorModel.findOne({$or:[{registerNo}, {email}]});
         if(!viewDoctor) return res.status(400).json({message:"Doctor Detail was not forund"})
         
-        res.status(200).json({message:'university dispalyed successfully!', doctor:{
+        res.status(200).json({message:'Doctor Details dispalyed successfully!', doctor:{
             _id:viewDoctor._id,
             doctorName:viewDoctor.doctorName,
             registorNo:viewDoctor.registerNo,
